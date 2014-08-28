@@ -1,3 +1,3 @@
-<%= link_to @url.short_url, @url.long_url %>
+<div>Here is your short url: <%= link_to @url.short_url, @url.long_url %></div>
 <br>
 <%= link_to "your home page", user_path(User.find(@url.user_id)) %>

@@ -8,3 +8,15 @@
 <span><%= link_to "Shorten your URL", new_url_path %></span>
 
 <span><%= link_to "edit your page", edit_user_path(@user) %></span>
+<% @user.urls.each do |url| %>
+<ul>
+  <li>
+    <div>Here is your long url: <%= link_to url.long_url,  url.long_url %></div>
+  </li>
+  <li>
+    <div>Here is your short url: <%= link_to url.short_url, url.long_url %></div>
+  </li>
+  <br>
+</ul>
+
+<% end %>
