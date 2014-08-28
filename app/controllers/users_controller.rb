@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # enable :sessions
   def index
+
     @users = User.all
   end
 
@@ -59,6 +60,7 @@ class UsersController < ApplicationController
   def destroy
     user=User.find params[:id]
     user.destroy
+    session[:user] = nil
     redirect_to root_path
   end
 
