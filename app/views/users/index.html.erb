@@ -8,14 +8,16 @@
 <%end%>
 </ul>
 
-<span><%= link_to "Sign Up", new_user_path %></span>
-<br>
-<span><%= link_to "login", login_path %></span>
-<br><br>
+
 
 <% if session[:user] != nil %>
 
 <% user = User.find(session[:user]) %>
 <div><%= user.username %> is logged in</div>
 <span><%= link_to "sign out", logout_path %></span>
+<% else %>
+<span><%= link_to "Sign Up", new_user_path %></span>
+<br>
+<span><%= link_to "login", login_path %></span>
+
 <% end%>
