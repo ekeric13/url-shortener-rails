@@ -1,6 +1,6 @@
 <h1 class= "test">Hello <%= @user.username %></h1>
 
-<p>Your password is <%= @user.display_password %></p>
+<% @user.display_password %>
 <h6>Shhh... it's a secret to everybody...</h6>
 
 <span><%= link_to "Home Page", root_path %></span>
