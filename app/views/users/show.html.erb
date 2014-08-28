@@ -6,8 +6,12 @@
 <span><%= link_to "Home Page", root_path %></span>
 
 <span><%= link_to "Shorten your URL", new_url_path %></span>
-
+<% if session[:user] == @user.id %>
 <span><%= link_to "edit your page", edit_user_path(@user) %></span>
+<span><%= link_to 'delete', user_path(@user), :method => :delete %></span>
+<% end%>
+
+
 <% @user.urls.each do |url| %>
 <ul>
   <li>

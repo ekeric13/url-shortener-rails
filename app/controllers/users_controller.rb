@@ -36,7 +36,30 @@ class UsersController < ApplicationController
     else
       render :login
     end
+  end
 
+  def edit
+    @user=User.find(params[:id])
+    if session[:user] == @user.id
+      @user=User.find(params[:id])
+    else
+      redirect_to root_path
+    end
+  end
+  def update
+
+    @user=User.find params[:id]
+    if @user.update_attribute :password, params[:user][:password]
+      redirect_to user_path(@user)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    user=User.find params[:id]
+    user.destroy
+    redirect_to root_path
   end
 
 
