@@ -1,0 +1,11 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: blue;
+
+#landingPage {
+  background-color: #00FFFF;
+
+  h1 {
+    color: $primary-color;
+    text-align: center;
+  }
+}
