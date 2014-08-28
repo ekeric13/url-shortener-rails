@@ -1,28 +1,30 @@
-<h1 class= "test">Hello <%= @user.username %></h1>
+<div id="profilePage">
+  <h1 class= "test">Hello <%= @user.username %></h1>
 
-<div class="test2" style="display: none"><%= @user.display_password %></div>
-<h6>Shhh... it's a secret to everybody...</h6>
+  <div class="test2" style="display: none"><%= @user.display_password %></div>
+  <h6>Shhh... it's a secret to everybody...</h6>
 
-<span><%= link_to "Home Page", root_path %></span>
+  <span><%= link_to "Home Page", root_path %></span>
 
-<span><%= link_to "Shorten your URL", new_url_path %></span>
-<% if session[:user] == @user.id %>
-<span><%= link_to "edit your page", edit_user_path(@user) %></span>
-<span><%= link_to 'delete', user_path(@user), :method => :delete %></span>
-<span><%= link_to "sign out", logout_path %></span>
+  <span><%= link_to "Shorten your URL", new_url_path %></span>
+  <% if session[:user] == @user.id %>
+  <span><%= link_to "edit your page", edit_user_path(@user) %></span>
+  <span><%= link_to 'delete', user_path(@user), :method => :delete %></span>
+  <span><%= link_to "sign out", logout_path %></span>
 
-<% end%>
+  <% end%>
 
 
-<% @user.urls.each do |url| %>
-<ul>
-  <li>
-    <div>Here is your long url: <%= link_to url.long_url,  url.long_url %></div>
-  </li>
-  <li>
-    <div>Here is your short url: <%= link_to url.short_url, url.long_url %></div>
-  </li>
-  <br>
-</ul>
+  <% @user.urls.each do |url| %>
+  <ul>
+    <li>
+      <div>Here is your long url: <%= link_to url.long_url,  url.long_url %></div>
+    </li>
+    <li>
+      <div>Here is your short url: <%= link_to url.short_url, url.long_url %></div>
+    </li>
+    <br>
+  </ul>
 
-<% end %>
+  <% end %>
+</div>
