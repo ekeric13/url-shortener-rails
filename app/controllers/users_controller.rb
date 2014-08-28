@@ -13,7 +13,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(:username =>params[:user][:username], :password => params[:user][:password])
+    p params
+    @user = User.new(:username => params[:user][:username])
+    @user.pass = params[:user][:pass]
     if @user.save
       session[:user] = @user.id
       redirect_to user_path(@user)
@@ -27,7 +29,7 @@ class UsersController < ApplicationController
   end
 
   def signin
-    @user = User.find_by(:username =>params[:user])
+    @user = User.find_by(:username =>params[:username])
     if @user != nil
       session[:user] = @user.id
       redirect_to user_path(@user)
