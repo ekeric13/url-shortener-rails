@@ -9,6 +9,8 @@
 <% if session[:user] == @user.id %>
 <span><%= link_to "edit your page", edit_user_path(@user) %></span>
 <span><%= link_to 'delete', user_path(@user), :method => :delete %></span>
+<span><%= link_to "sign out", logout_path %></span>
+
 <% end%>
 
 
