@@ -9,13 +9,15 @@ class UrlsController < ApplicationController
 
   def new
     @url = Url.new
+
   end
 
   def create
     url = Url.create(long_url: params[:url][:long_url])
+    user = User.find(session[:user])
+    user.urls << url
     if url.save
-      # puts "!!!!!!"
-      # puts
+
       redirect_to url_path(url)
     else
       render :new

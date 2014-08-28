@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root "users#index"
   resources :users
   resources :urls
+
+  get "/login" => "users#login"
+  post "/signin" => "users#signin"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
