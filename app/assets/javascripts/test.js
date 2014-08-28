@@ -9,13 +9,11 @@ $(document).on("page:change", function(){
     }
     $('.test').on('mouseover', makeRed);
 
-    // var test = document.getElementsByClassName('test')[0];
-    // var red = function() {
-    //   test.addEventListener("click", function() {
-    //     this.style.color = 'blue'
-    //   });
-    // }
-    // red();
+    var test = document.getElementsByClassName('test')[0];
+    var blue = function() {
+      this.style.color = 'blue'
+    };
+    test.addEventListener("click", blue)
   };
 
 
