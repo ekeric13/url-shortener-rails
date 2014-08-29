@@ -1,6 +1,6 @@
-<h1>Shorten your URL</h1>
+<h3>Shorten your URL!!!!</h3>
 <ul>
-<%= form_for @url do |f| %>
+<%= form_for @url, remote: true do |f| %>
   <li>
     <%= f.label :long_url %>
     <%= f.text_field :long_url %>

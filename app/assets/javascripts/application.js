@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require galleria-1.4.2
+//= require galleria.classic
 //= require_tree .

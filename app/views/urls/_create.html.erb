@@ -1,0 +1,13 @@
+<p>Here is the url</p>
+
+<% @user.urls.each do |url| %>
+  <ul>
+    <li>
+      <div>Here is your long url: <%= link_to url.long_url,  url.long_url %></div>
+    </li>
+    <li>
+      <div>Here is your short url: <%= link_to url.short_url, url.long_url %></div>
+    </li>
+    <br>
+  </ul>
+<%end %>

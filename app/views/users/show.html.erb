@@ -6,15 +6,20 @@
 
   <span><%= link_to "Home Page", root_path %></span>
 
-  <span><%= link_to "Shorten your URL", new_url_path %></span>
+
   <% if session[:user] == @user.id %>
+  <span><%= link_to "Shorten your URL", new_url_path, remote: true  %></span>
   <span><%= link_to "edit your page", edit_user_path(@user) %></span>
   <span><%= link_to 'delete', user_path(@user), :method => :delete %></span>
   <span><%= link_to "sign out", logout_path %></span>
 
+  <%= render template: "urls/new", :class => 'new-url' %>
+
   <% end%>
 
+<div id="url-list"> </div>
 
+<!--   <div class="url-list">
   <% @user.urls.each do |url| %>
   <ul>
     <li>
@@ -25,6 +30,8 @@
     </li>
     <br>
   </ul>
+  </div>
 
   <% end %>
 </div>
+ -->
